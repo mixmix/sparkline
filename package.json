@@ -1,6 +1,6 @@
 {
-  "name": "sparklines",
-  "version": "1.0.0",
+  "name": "sparkline-canvas",
+  "version": "0.0.1",
   "description": "Tiny project for drawing sparklines in your webapp",
   "main": "source/sparkline.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/mariusGundersen/sparkline.git"
+    "url": "https://github.com/mixmix/sparkline-canvas"
   },
   "keywords": [
     "sparkline",
@@ -18,8 +18,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mariusGundersen/sparkline/issues"
-  },
-  "devDependencies": {
-    "express": "^4.9.5"
   }
 }

@@ -1,4 +1,6 @@
-# Sparkline
+# Sparkline-canvas
+
+_A fork of [sparkline](https://github.com/mariusGundersen/sparkline) which returns a raw canvas DOM element_
 
 [Sparklines](http://en.wikipedia.org/wiki/Sparkline) are tiny line graphs draws inline in the document. They are designed to present the overal trend in data without giving detailed information about a dataset. 
 
