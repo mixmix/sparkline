@@ -1,6 +1,6 @@
 {
   "name": "sparkline-canvas",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tiny project for drawing sparklines in your webapp",
   "main": "source/sparkline.js",
   "scripts": {
