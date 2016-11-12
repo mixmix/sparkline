@@ -26,6 +26,7 @@ function Sparkline (options) {
 Sparkline.options = {
   width: 100,
   height: 20, // TODO null, // this is being overridden further down by checking the parent elements' offsetHeight
+  className: '',
   lineColor: 'black',
   lineWidth: 1,
   startColor: 'transparent',
@@ -78,6 +79,7 @@ Sparkline.prototype.draw = function (points) {
 
   this.canvas.width = this.options.width * this.ratio
   this.canvas.style.width = this.options.width + 'px'
+  this.canvas.className = this.options.className
 
   var pxHeight = this.options.height // TODO (remove) || this.element.offsetHeight
   this.canvas.height = pxHeight * this.ratio
