@@ -37,7 +37,7 @@ function view (data, info) {
 The below documentation is from the souce module which is all relevant, _except_ sparkline-canvas does not accept an element, and its `draw` function directly returns a canvas object.
 
 It's mainly included for details about `options`.
-I've extended the options to include `className`
+I've extended the options to include `className` and `id`
 
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -115,7 +115,8 @@ An object containing the default options for drawing a sparkline. This is shared
 
  * `width` (`100`): A number giving the width of the sparkline box in pixels.
  * `height` (`null`): A number giving the height of the sparkline box in pixels. By default, uses the height of the Canvas element.
- * `className` (`''`): The class[es] given to the canvas. This can be useful for morphdom. By default, is empty.
+ * `className` (`''`): The class[es] given to the canvas. By default, is empty.
+ * `id` (`''`): The id given to the canvas. This can be useful for morphdom. By default, is empty.
  * `lineColor` (`"black"`): A string giving the color of the sparkline. Any valid CSS color, including RGB, HEX and HSV.
  * `lineWidth` (`1`): A number giving the stroke of the line in pixels.
  * `startColor` (`"transparent"`): A string giving the color of the dot marking the first value. Any valid CSS color.
