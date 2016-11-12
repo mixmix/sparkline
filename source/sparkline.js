@@ -8,26 +8,24 @@ function extend (specific, general) {
   return obj
 }
 
-function Sparkline (element, options) {
-  this.element = element
+function Sparkline (options) {
   this.options = extend(options || {}, Sparkline.options)
 
-  init: {
-    this.element.innerHTML = '<canvas></canvas>'
-    this.canvas = this.element.firstChild
-    this.context = this.canvas.getContext('2d')
-    this.ratio = window.devicePixelRatio || 1
+  // init: {
+  this.canvas = document.createElement('canvas')
+  this.context = this.canvas.getContext('2d')
+  this.ratio = window.devicePixelRatio || 1
 
-    if (this.options.tooltip) {
-      this.canvas.style.position = 'relative'
-      this.canvas.onmousemove = showTooltip.bind(this)
-    }
+  if (this.options.tooltip) {
+    this.canvas.style.position = 'relative'
+    this.canvas.onmousemove = showTooltip.bind(this)
   }
+  // }
 }
 
 Sparkline.options = {
   width: 100,
-  height: null,
+  height: 20, // TODO null, // this is being overridden further down by checking the parent elements' offsetHeight
   lineColor: 'black',
   lineWidth: 1,
   startColor: 'transparent',
@@ -40,14 +38,14 @@ Sparkline.options = {
   tooltip: null
 }
 
-Sparkline.init = function (element, options) {
-  return new Sparkline(element, options)
-}
+// Sparkline.init = function (element, options) {
+  // return new Sparkline(element, options)
+// }
 
-Sparkline.draw = function (element, points, options) {
-  var sparkline = new Sparkline(element, options)
+Sparkline.draw = function (points, options) {
+  var sparkline = new Sparkline(options)
   sparkline.draw(points)
-  return sparkline
+  return sparkline.canvas
 }
 
 function getY (minValue, maxValue, offsetY, height, index) {
@@ -81,7 +79,7 @@ Sparkline.prototype.draw = function (points) {
   this.canvas.width = this.options.width * this.ratio
   this.canvas.style.width = this.options.width + 'px'
 
-  var pxHeight = this.options.height || this.element.offsetHeight
+  var pxHeight = this.options.height // TODO (remove) || this.element.offsetHeight
   this.canvas.height = pxHeight * this.ratio
   this.canvas.style.height = pxHeight + 'px'
 

@@ -4,6 +4,7 @@
   "description": "Tiny project for drawing sparklines in your webapp",
   "main": "source/sparkline.js",
   "scripts": {
+    "demo": "budo demo.js --live --port 4000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mariusGundersen/sparkline/issues"
+  },
+  "devDependencies": {
+    "budo": "^9.2.1"
   }
 }

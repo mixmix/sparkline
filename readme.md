@@ -1,6 +1,41 @@
 # Sparkline-canvas
 
-_A fork of [sparkline](https://github.com/mariusGundersen/sparkline) which returns a raw canvas DOM element_
+_A fork of [sparkline](https://github.com/mariusGundersen/sparkline) which returns a raw canvas DOM element._
+
+## Example
+
+```js
+var spark = require('sparkline-canvas')
+
+var data = [1, 2, 3, 4, 1, 6]
+var graph = spark.draw(data)
+
+document.body.appendChild(graph)
+```
+
+This interface makes it possible to defer DOM manipulation to a dedicated module, like [morphdom](https://www.npmjs.com/package/morphdom) or [yo-yo](https://www.npmjs.com/package/yo-yo#tagged-template-literals).
+Note with yo-yo, you can drop the graph straight into a template : 
+
+```js
+var html = require('yo-yo')
+var spark = require('sparkline-canvas')
+
+function view (data, info) {
+  var graph = spark.draw(data, { height: 30 })
+
+  return html`
+    <div>
+      ${graph}
+      <span>${info}</span>
+    </div>
+  `
+}
+```
+
+**Note**, the below documentation is from the souce module which is all relevant, _except_ sparkline-canvas does not accept an element, and its `draw` function directly returns a canvas object.
+It's mainly included for details about `options`.
+
+----
 
 [Sparklines](http://en.wikipedia.org/wiki/Sparkline) are tiny line graphs draws inline in the document. They are designed to present the overal trend in data without giving detailed information about a dataset. 
 
